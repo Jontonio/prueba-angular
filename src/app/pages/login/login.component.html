@@ -1,0 +1,28 @@
+<div class="container text-center">
+  <br>
+  <mat-card>
+    <h2 class="m-2">Login</h2>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Digite su password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)="ingresar()">
+        Ingresar
+      </button>
+      <button (click)="loginConGoogle()">Con google</button>
+      <button (click)="active()">active</button>
+      <button (click)="logout()">Cerrar sesión</button>
+    </form>
+  </mat-card>
+</div>
+
